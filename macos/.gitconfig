@@ -1,0 +1,49 @@
+[user]
+    name = Somnia1337
+    email = 2581063732@qq.com
+
+[core]
+    excludesfile = /Users/somnialu/.gitignore_global
+    quotepath = off
+    whitespace = error
+    preloadindex = true
+    filemode = false
+    untrackedCache = true
+
+[init]
+    defaultBranch = main
+
+[color]
+    ui = auto
+
+[help]
+    autocorrect = 1
+
+[diff]
+    algorithm = histogram
+    mnemonicPrefix = true
+
+[url "git@github.com:Somnia1337/"]
+    insteadOf = "me:"
+
+[url "https://github.com/"]
+    insteadOf = "gh:"
+
+[alias]
+    cl = clone
+    st = status -sb
+    df = diff
+    ad = add
+    rs = restore
+    lg = log --oneline
+    cm = commit
+    pl = pull
+    ps = push
+    co = checkout
+    br = branch
+    tm = "!f() { \
+        timestamp=$(date +'%Y-%m-%d %H:%M'); \
+        git add .; \
+        git commit -m \"$timestamp\"; \
+        git push; \
+    }; f"

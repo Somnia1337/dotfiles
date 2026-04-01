@@ -1,0 +1,69 @@
+{
+  "inlay_hints": {
+    "enabled": true
+  },
+  "git_panel": {
+    "file_icons": true,
+    "show_count_badge": true,
+    "collapse_untracked_diff": true,
+    "tree_view": true
+  },
+  "close_on_file_delete": true,
+  "file_finder": {
+    "include_ignored": "all"
+  },
+  "seed_search_query_from_cursor": "selection",
+  "search": {
+    "include_ignored": true
+  },
+  "completion_menu_scrollbar": "always",
+  "completions": {
+    "words_min_length": 1
+  },
+  "soft_wrap": "editor_width",
+  "minimap": {
+    "current_line_highlight": "gutter",
+    "thumb_border": "none",
+    "display_in": "all_editors",
+    "show": "always"
+  },
+  "inline_code_actions": false,
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "current_line_highlight": "gutter",
+  "tab_bar": {
+    "show_nav_history_buttons": false
+  },
+  "title_bar": {
+    "show_branch_icon": true
+  },
+  "outline_panel": {
+    "indent_size": 16.0
+  },
+  "project_panel": {
+    "indent_size": 16.0,
+    "entry_spacing": "standard"
+  },
+  "icon_theme": "Catppuccin Macchiato",
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "terminal": {
+    "keep_selection_on_copy": false,
+    "blinking": "on",
+    "cursor_shape": "bar",
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "env": { "GITHUB_TOKEN": "<hidden>" }
+  },
+  "buffer_line_height": "standard",
+  "disable_ai": true,
+  "buffer_font_size": 22.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "GitHub Dark High Contrast"
+  },
+  "proxy": "http://127.0.0.1:7897"
+}
