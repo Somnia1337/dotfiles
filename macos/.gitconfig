@@ -9,12 +9,23 @@
     preloadindex = true
     filemode = false
     untrackedCache = true
+    pager = delta
 
 [init]
     defaultBranch = main
 
 [color]
     ui = auto
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    side-by-side = true
+
+[merge]
+    conflictStyle = zdiff3
 
 [help]
     autocorrect = 1
@@ -30,17 +41,19 @@
     insteadOf = "gh:"
 
 [alias]
-    cl = clone
-    st = status -sb
-    df = diff
     ad = add
-    rs = restore
-    lg = log --oneline
+    br = branch
+    cl = clone
     cm = commit
+    co = checkout
+    df = diff
+    in = init
+    lg = log --oneline
     pl = pull
     ps = push
-    co = checkout
-    br = branch
+    rs = restore
+    ss = stash
+    st = status -sb
     tm = "!f() { \
         timestamp=$(date +'%Y-%m-%d %H:%M'); \
         git add .; \
