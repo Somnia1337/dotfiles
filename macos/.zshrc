@@ -59,6 +59,7 @@ alias yt='yt-dlp'
 alias zj='zellij'
 
 alias cpf='pbcopy <'
+alias dus='dust -r -b -n 64 -d 3'
 alias e='eza --icons --group-directories-first'
 alias ea='eza -a --icons --group-directories-first'
 alias el='eza -lh --icons --group-directories-first'
