@@ -1,0 +1,61 @@
+[user]
+    name = Somnia1337
+    email = 2581063732@qq.com
+
+[core]
+    quotepath = off
+    whitespace = error
+    preloadindex = true
+    filemode = false
+    untrackedCache = true
+    pager = delta
+
+[init]
+    defaultBranch = main
+
+[color]
+    ui = auto
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    side-by-side = true
+
+[merge]
+    conflictStyle = zdiff3
+
+[help]
+    autocorrect = 1
+
+[diff]
+    algorithm = histogram
+    mnemonicPrefix = true
+
+[url "git@github.com:Somnia1337/"]
+    insteadOf = "me:"
+
+[url "https://github.com/"]
+    insteadOf = "gh:"
+
+[alias]
+    ad = add
+    br = branch
+    cl = clone
+    cm = commit
+    co = checkout
+    df = diff
+    in = init
+    lg = log --oneline
+    pl = pull
+    ps = push
+    rs = restore
+    ss = stash
+    st = status -sb
+    tm = "!f() { \
+        timestamp=$(date +'%Y-%m-%d %H:%M'); \
+        git add .; \
+        git commit -m \"$timestamp\"; \
+        git push; \
+    }; f"
