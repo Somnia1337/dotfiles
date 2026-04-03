@@ -11,5 +11,6 @@ Hand-managed, serving as a mere backup. Looking forward to switching to [chezmoi
 - fastfetch: `fastfetch.config.jsonc` (actually `config.jsonc`)
 - Git: `.gitconfig`
 - Ghostty: `ghostty.config` (actually `config`)
+- Just: `.justfile` (in the HOME directory)
 - Zed: `zed.settings.json` (actually `settings.json`)
 - zsh: `.zshrc`
