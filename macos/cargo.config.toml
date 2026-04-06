@@ -1,0 +1,14 @@
+[alias]
+ad = "add"
+b = "build"
+br = ["build", "--release"]
+c = "check"
+cl = "clean"
+clp = ["clippy", "--", "-W", "clippy::nursery", "-W", "clippy::pedantic"]
+cr = ["check", "release"]
+i = ["info", "--registry", "crates-io"]
+r = "run"
+rm = "remove"
+rr = ["run", "--release"]
+t = "test"
+tr = ["test", "--release"]
