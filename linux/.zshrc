@@ -5,7 +5,6 @@ zshHistory="$HOME/.zsh_history"
 export BUN_INSTALL="$HOME/.bun"
 export CONFIG="$HOME/.config"
 export DEEPSEEK_API_KEY=<hidden>
-export DOTS="$HOME/code/dotfiles/linux"
 export EDITOR=kwrite
 export FC_LANG="en-US:zh-CN"
 export GITHUB_TOKEN=<hidden>
@@ -13,11 +12,12 @@ export HTTP_PROXY="http://127.0.0.1:7897"
 export HTTPS_PROXY=$HTTP_PROXY
 export LANG=zh_CN.UTF-8
 export PYTHON_HISTORY=/dev/null
+export RUSTC_WRAPPER=sccache
+export ZSTD_CLEVEL=10
 
 path=(
   "$BUN_INSTALL/bin"
   "$HOME/.local/bin"
-  "$HOME/code/flutter-sdk/flutter/bin"
   "$HOME/code/zsh"
   $path
 )
@@ -71,6 +71,7 @@ alias ela='eza -alh --icons --group-directories-first'
 alias fa='fastfetch --logo none --config all.jsonc'
 alias fn='fastfetch --logo none'
 alias pg='progress -mp $!'
+alias psf='xclip -out -selection clipboard >'
 alias rm='command rm -I'
 alias tarc='tar -caf'
 alias tarl='tar -tf'
@@ -84,7 +85,6 @@ alias zm='vim $zshConfig'
 alias zs='source $zshConfig'
 
 # py-script
-fund() { $HOME/code/python/py-script/fund.py }
 rn3() { $HOME/code/python/py-script/rn3.py "$@"; }
 
 # backup
@@ -102,26 +102,6 @@ res() {
   [ -f "$backup" ] || { echo "backup not found: $backup"; return 1; }
   cp "$backup" "$file"
   echo "restored: $backup"
-}
-
-# compile most recent modified .typ file
-typ() {
-  local latest=$(ls -t *.typ 2>/dev/null | head -n 1)
-  if [ -n "$latest" ]; then
-    echo "Compiling $latest"
-    typst compile "$latest"
-  else
-    echo "No .typ files found in the current dir."
-  fi
-}
-
-# compile all .typ files
-typa() {
-  for file in *.typ; do
-    [ -f "$file" ] || { echo "No .typ files found in the current dir."; return; }
-    echo "Compiling $file"
-    typst compile "$file"
-  done
 }
 
 # apply CHANGELOG.md template
@@ -143,6 +123,15 @@ uvlock() {
   uv lock
   uv sync --frozen
   rm req_temp.txt
+}
+
+# yazi wrapper
+y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
 }
 
 source $HOME/code/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
