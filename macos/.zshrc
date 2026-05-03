@@ -54,7 +54,6 @@ alias rs='restic'
 alias sf='stockfish'
 alias sudo='sudo '
 alias tm='tmux'
-alias yt='yt-dlp'
 alias zj='zellij'
 
 alias cpf='pbcopy <'
@@ -66,10 +65,12 @@ alias ela='eza -alh --icons --group-directories-first'
 alias fa='fastfetch --logo none --config all.jsonc'
 alias fn='fastfetch --logo none'
 alias pg='progress -mp $!'
+alias psf='pbpaste >'
 alias rm='command rm -I'
 alias tarc='tar --disable-copyfile --exclude=".DS_Store" --exclude=".git" -caf'
 alias tarl='tar -tf'
 alias tarx='tar -xkf'
+alias yt='yt-dlp --cookies-from-browser brave -o "%(title)s.%(ext)s"'
 
 # zsh
 alias clh=': > $zshHistory'
@@ -121,11 +122,11 @@ uvlock() {
 
 # yazi wrapper
 y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
 }
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
