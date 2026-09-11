@@ -12,6 +12,7 @@ export LANG=zh_CN.UTF-8
 export PYTHON_HISTORY=/dev/null
 
 path=(
+  "/opt/homebrew/bin"
   "$BUN_INSTALL/bin"
   "$HOME/.local/bin"
   "$HOME/bin"
