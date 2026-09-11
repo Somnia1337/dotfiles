@@ -1,0 +1,25 @@
+delta := "delta --no-gitconfig --side-by-side"
+
+cargo:
+    {{ delta }} cargo.config.toml ~/.cargo/config.toml
+
+fastfetch:
+    {{ delta }} fastfetch.config.jsonc ~/.config/fastfetch/config.jsonc
+
+git:
+    {{ delta }} .gitconfig ~/.gitconfig
+
+ghostty:
+    {{ delta }} ghostty.config ~/.config/ghostty/config
+
+just:
+    {{ delta }} home.justfile ~/.justfile
+
+vim:
+    {{ delta }} .vimrc ~/.vimrc
+
+zed:
+    {{ delta }} zed.settings.json ~/.config/zed/settings.json
+
+zsh:
+    {{ delta }} .zshrc ~/.zshrc

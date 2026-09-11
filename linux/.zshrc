@@ -86,6 +86,7 @@ alias zs='source $zshConfig'
 
 # py-script
 rn3() { $HOME/code/python/py-script/rn3.py "$@"; }
+con() { $HOME/code/python/py-script/concat.py "$@"; }
 
 # backup
 bak() {

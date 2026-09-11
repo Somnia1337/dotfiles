@@ -14,7 +14,7 @@ Hand-managed, serving as a mere backup. Looking forward to switching to [chezmoi
 |fastfetch|`fastfetch.config.jsonc`|`config.jsonc`|
 |Git|`.gitconfig`||
 |Ghostty|`ghostty.config`|`config`|
-|Just|`.justfile`<br>(in HOME directory)||
+|Just|`home.justfile`<br>(in HOME directory)|`.justfile`|
 |Vim|`.vimrc`||
 |Zed|`zed.settings.json`|`settings.json`|
 |zsh|`.zshrc`||
