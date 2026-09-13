@@ -58,7 +58,5 @@
     sw = switch
     tm = "!f() { \
         timestamp=$(date +'%Y-%m-%d %H:%M'); \
-        git add .; \
         git commit -m \"$timestamp\"; \
-        git push; \
     }; f"

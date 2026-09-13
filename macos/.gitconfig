@@ -47,16 +47,17 @@
     cm = commit
     co = checkout
     df = diff
+    ft = fetch
     in = init
     lg = log --oneline
     pl = pull
     ps = push
     rs = restore
+    rv = revert
     ss = stash
     st = status -sb
+    sw = switch
     tm = "!f() { \
         timestamp=$(date +'%Y-%m-%d %H:%M'); \
-        git add .; \
         git commit -m \"$timestamp\"; \
-        git push; \
     }; f"
